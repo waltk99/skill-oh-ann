@@ -34,25 +34,25 @@ class HelloWorldSkill(MycroftSkill):
         settings will be available."""
         my_setting = self.settings.get('my_setting')
 
-    @intent_handler(IntentBuilder('ThankYouIntent').require('ThankYouKeyword'))
-    def handle_thank_you_intent(self, message):
+    @intent_handler(IntentBuilder('ThanksAnnItent').require('ThanksAnnKeyword'))
+    def handle_thanks_ann_intent(self, message):
         """ This is an Adapt intent handler, it is triggered by a keyword."""
-        self.speak_dialog("welcome")
+        self.speak_dialog("ann")
 
-    @intent_handler('HowAreYou.intent')
-    def handle_how_are_you_intent(self, message):
+    @intent_handler('OhAnn.intent')
+    def handle_oh_ann_intent(self, message):
         """ This is a Padatious intent handler.
         It is triggered using a list of sample phrases."""
-        self.speak_dialog("how.are.you")
+        self.speak_dialog("oh.ann")
 
-    @intent_handler(IntentBuilder('HelloWorldIntent')
-                    .require('HelloWorldKeyword'))
-    def handle_hello_world_intent(self, message):
+    @intent_handler(IntentBuilder('HelloAnnIntent')
+                    .require('HelloAnnKeyword'))
+    def handle_hello_ann_intent(self, message):
         """ Skills can log useful information. These will appear in the CLI and
         the skills.log file."""
         self.log.info("There are five types of log messages: "
                       "info, debug, warning, error, and exception.")
-        self.speak_dialog("hello.world")
+        self.speak_dialog("hello.ann")
 
     def stop(self):
         pass
